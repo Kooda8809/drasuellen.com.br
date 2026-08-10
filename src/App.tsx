@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
-import { PositioningSection } from './components/PositioningSection';
 import { AboutSection } from './components/AboutSection';
 import { TreatmentsSection } from './components/TreatmentsSection';
 import { ResultsSection } from './components/ResultsSection';
@@ -28,34 +27,31 @@ export function App() {
       {/* 02 — HERO */}
       <Hero onOpenModal={handleOpenModal} />
 
-      {/* 03 — BLOCO DE POSICIONAMENTO */}
-      <PositioningSection />
-
-      {/* 04 — SOBRE A DRA. SUELLEN */}
+      {/* 03 — SOBRE A DRA. SUELLEN (CONECTADO DIRETAMENTE À HERO) */}
       <AboutSection onOpenModal={handleOpenModal} />
 
-      {/* 05 — TRATAMENTOS PRINCIPAIS */}
+      {/* 04 — TRATAMENTOS PRINCIPAIS */}
       <TreatmentsSection onOpenModal={handleOpenModal} />
 
-      {/* 06 — RESULTADOS / CASOS */}
+      {/* 05 — RESULTADOS / CASOS */}
       <ResultsSection onOpenModal={handleOpenModal} />
 
-      {/* 07 — DIFERENCIAIS */}
+      {/* 06 — DIFERENCIAIS */}
       <DifferentialsSection />
 
-      {/* 08 — EXPERIÊNCIA DO PACIENTE */}
+      {/* 07 — EXPERIÊNCIA DO PACIENTE */}
       <PatientJourneySection />
 
-      {/* 09 — PROVA SOCIAL */}
+      {/* 08 — PROVA SOCIAL */}
       <TestimonialsSection />
 
-      {/* 10 — FAQ */}
+      {/* 09 — FAQ */}
       <FAQSection onOpenModal={handleOpenModal} />
 
-      {/* 11 — CTA FINAL */}
+      {/* 10 — CTA FINAL */}
       <FinalCTASection onOpenModal={handleOpenModal} />
 
-      {/* 12 — FOOTER */}
+      {/* 11 — FOOTER */}
       <Footer />
 
       {/* FLOATING WHATSAPP CTA */}

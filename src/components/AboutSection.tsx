@@ -8,8 +8,8 @@ interface AboutSectionProps {
 
 export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
   return (
-    <section id="sobre" className="py-16 sm:py-24 lg:py-36 bg-cream border-t border-espresso/10 relative">
-      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+    <section id="sobre" className="py-20 sm:py-28 lg:py-36 bg-cream relative overflow-hidden">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* Left Column - Photography (dra3.avif) */}
@@ -44,7 +44,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
             </div>
           </motion.div>
 
-          {/* Right Column - Text & Authority (High Readability Typography) */}
+          {/* Right Column - Text & Authority */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
