@@ -64,7 +64,7 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ onOpenModal })
             </div>
           </motion.div>
 
-          {/* Right Portrait in AVIF */}
+          {/* Right Portrait in AVIF (dra3.avif) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -74,11 +74,11 @@ export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ onOpenModal })
           >
             <div className="rounded-2xl overflow-hidden shadow-2xl aspect-[4/5] border-4 border-[#FCE794] bg-[#3E2312]">
               <picture>
-                <source srcSet="/images/cta.avif" type="image/avif" />
+                <source srcSet="/images/dra3.avif" type="image/avif" />
                 <img
-                  src="/images/cta.avif"
-                  alt="Dra. Suellen Campos"
-                  className="w-full h-full object-cover"
+                  src="/images/dra3.avif"
+                  alt="Dra. Suellen Campos — Atendimento Personalizado em Manaus"
+                  className="w-full h-full object-cover object-[center_15%]"
                 />
               </picture>
             </div>
