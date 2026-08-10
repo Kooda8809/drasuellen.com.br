@@ -10,7 +10,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   return (
     <section className="relative min-h-[100dvh] flex items-end md:items-center bg-[#2D1612] text-white overflow-hidden">
       
-      {/* FULL-BACKGROUND HERO IMAGE */}
+      {/* FULL-BACKGROUND HERO IMAGE - MOBILE FOCUS AT OBJECT 82% 15% TO PROPERLY CENTER DRA SUELLEN */}
       <div className="absolute inset-0 z-0">
         <picture>
           <source srcSet="/images/hero_new.avif" type="image/avif" />
@@ -18,7 +18,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             src="/images/hero_new.avif"
             alt="Dra. Suellen Campos — Odontologia Estética em Manaus"
             fetchPriority="high"
-            className="w-full h-full object-cover object-[center_30%] md:object-[85%_top] filter brightness-[0.96] contrast-[1.04]"
+            className="w-full h-full object-cover object-[82%_15%] md:object-[85%_top] filter brightness-[0.96] contrast-[1.04]"
           />
         </picture>
 
@@ -41,13 +41,13 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="lg:col-span-7 flex flex-col items-start"
           >
-            {/* Top Brand Tag (Montserrat) */}
+            {/* Top Brand Tag */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] uppercase tracking-[0.18em] text-[#FCE794] font-montserrat font-semibold mb-4 sm:mb-6 backdrop-blur-md shadow-md">
               <Sparkles className="w-3.5 h-3.5 text-[#FCE794]" />
               <span>Odontologia Estética em Manaus</span>
             </div>
 
-            {/* Main Editorial Headline (Playfair Display) */}
+            {/* Main Editorial Headline */}
             <h1 className="font-playfair text-4xl md:text-6xl lg:text-7xl leading-[1.15] text-white font-bold mb-4 sm:mb-6 max-w-2xl">
               Descubra o sorriso <br />
               <span className="font-playfair italic text-[#FCE794]">
@@ -56,12 +56,12 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               com a sua essência.
             </h1>
 
-            {/* Subheadline Text (Montserrat) */}
+            {/* Subheadline Text */}
             <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed max-w-lg mb-6 sm:mb-8">
               Transformações estéticas e reabilitação oral planejadas sob medida pela Dra. Suellen Campos. Precisão clínica, escaneamento 3D e máxima naturalidade sem artificialidade.
             </p>
 
-            {/* Mobile-First CTA Button (Montserrat) */}
+            {/* Mobile-First CTA Button */}
             <div className="w-full sm:w-auto mb-8 sm:mb-10">
               <button
                 onClick={onOpenModal}
@@ -74,7 +74,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
               </button>
             </div>
 
-            {/* Sub-features list (Montserrat) */}
+            {/* Sub-features list */}
             <div className="flex items-center space-x-4 sm:space-x-6 text-xs text-white/80 font-montserrat font-light border-t border-white/15 pt-5 w-full max-w-md">
               <div className="flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#FCE794]" />
