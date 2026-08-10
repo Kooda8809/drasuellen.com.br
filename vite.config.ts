@@ -5,6 +5,9 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
-    host: true
+    host: true,
+    watch: {
+      ignored: ['**/Imagens para a galeria/**', '**/*.jpg', '**/*.jpeg', '**/.git/**']
+    }
   }
 });
