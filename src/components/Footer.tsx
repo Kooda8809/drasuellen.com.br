@@ -1,7 +1,9 @@
 import React from 'react';
-import { Instagram, MessageCircle, MapPin } from 'lucide-react';
+import { Instagram, MessageCircle, MapPin, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '559294235393';
+
   return (
     <footer className="bg-espresso text-cream border-t border-white/10 py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -44,23 +46,27 @@ export const Footer: React.FC = () => {
                 <MapPin className="w-4 h-4 text-accent shrink-0" />
                 <span>Manaus — AM • Atendimento com Hora Marcada</span>
               </div>
+              <div className="flex items-center space-x-2">
+                <Phone className="w-4 h-4 text-accent shrink-0" />
+                <span>+55 (92) 9423-5393</span>
+              </div>
               <div className="flex items-center space-x-3 pt-2">
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/drasuellencamposorto/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2.5 min-h-[44px] rounded-full bg-white/10 hover:bg-primary transition-all text-white flex items-center space-x-2 font-bold"
-                  aria-label="Instagram"
+                  aria-label="Instagram da Dra. Suellen Campos"
                 >
                   <Instagram className="w-4 h-4 text-accent" />
                   <span className="text-[11px] uppercase tracking-wider">Instagram</span>
                 </a>
                 <a
-                  href={`https://wa.me/${import.meta.env.VITE_WHATSAPP_NUMBER || '5592999999999'}`}
+                  href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Olá, Dra. Suellen! Gostaria de agendar uma avaliação.')}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2.5 min-h-[44px] rounded-full bg-white/10 hover:bg-primary transition-all text-white flex items-center space-x-2 font-bold"
-                  aria-label="WhatsApp"
+                  aria-label="WhatsApp da Dra. Suellen Campos"
                 >
                   <MessageCircle className="w-4 h-4 text-accent" />
                   <span className="text-[11px] uppercase tracking-wider">WhatsApp</span>

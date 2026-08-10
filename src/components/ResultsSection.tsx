@@ -128,18 +128,23 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
           </AnimatePresence>
         </div>
 
-        {/* Bottom CTA Banner */}
+        {/* Bottom CTA Banner with Official Instagram Link */}
         <div className="mt-12 sm:mt-16 text-center">
           <div className="max-w-xl mx-auto p-4 bg-[#FFFFFF] rounded-2xl sm:rounded-full shadow-2xl border border-white/40 flex flex-col sm:flex-row items-center justify-between text-[#3E2312] gap-3 px-6">
-            <div className="flex items-center space-x-2 text-left">
+            <a
+              href="https://www.instagram.com/drasuellencamposorto/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 text-left hover:text-[#9C5E33] transition-colors"
+            >
               <Instagram className="w-5 h-5 text-[#9C5E33] shrink-0" />
               <span className="text-xs font-bold text-[#3E2312]">
-                Deseja simular o seu novo sorriso?
+                Siga @drasuellencamposorto no Instagram
               </span>
-            </div>
+            </a>
             <button
               onClick={onOpenModal}
-              className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-[#9C5E33] hover:bg-[#3E2312] text-white hover:text-[#FCE794] font-bold text-xs uppercase tracking-editorial rounded-full transition-all duration-300 shadow flex items-center justify-center"
+              className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-[#9C5E33] hover:bg-[#3E2312] text-white hover:text-[#FCE794] font-bold text-xs uppercase tracking-editorial rounded-full transition-all duration-300 shadow flex items-center justify-center shrink-0"
             >
               SOLICITAR MOCKUP 3D
             </button>
