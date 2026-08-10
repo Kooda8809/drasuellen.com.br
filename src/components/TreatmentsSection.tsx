@@ -15,7 +15,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
       title: 'Facetas de Porcelana',
       subtitle: 'Lentes de Contato Cerâmicas',
       description: 'Lâminas ultra-finas confeccionadas artesanalmente em porcelana pura para corrigir cor, formato, tamanho e alinhamento dos dentes com desgaste mínimo.',
-      image: '/images/facetas.avif',
+      image: '/images/lentes_de_porcelana.avif',
       highlights: [
         'Planejamento Digital DSD 3D',
         'Preservação máxima da estrutura dental',
@@ -29,7 +29,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
       title: 'Implantes Dentários',
       subtitle: 'Reabilitação Fixa de Alta Precisão',
       description: 'Substituição definitiva de dentes perdidos através de implantes de titânio ou zircônia e coroas cerâmicas que mimetizam perfeitamente a dentição natural.',
-      image: '/images/implantes.avif',
+      image: '/images/implante.avif',
       highlights: [
         'Cirurgia guiada de alta precisão',
         'Recuperação da eficiência mastigatória',
@@ -43,7 +43,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
       title: 'Reabilitação Oral',
       subtitle: 'Harmonia Funcional & Estética',
       description: 'Tratamento interdisciplinar complexo para restabelecer a saúde, a mastigação correta e a estética em casos de desgastes severos ou perdas extensas.',
-      image: '/images/reabilitacao.avif',
+      image: '/images/reabilitacao_oral.avif',
       highlights: [
         'Reconstrução da dimensão vertical',
         'Equilíbrio da articulação temporomandibular (ATM)',
@@ -57,7 +57,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
       title: 'Estética do Sorriso',
       subtitle: 'Clareamento & Plástica Gengival',
       description: 'Procedimentos minimamente invasivos focados na iluminação do sorriso e na simetria do contorno gengival para um resultado harmônico.',
-      image: '/images/estetica.avif',
+      image: '/images/estetica_do_sorriso.avif',
       highlights: [
         'Clareamento a laser de alta performance',
         'Gengivoplastia e remodelação de zênite',
