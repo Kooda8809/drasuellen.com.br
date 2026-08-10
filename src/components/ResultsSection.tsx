@@ -52,40 +52,40 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
   const filteredCases = activeTab === 'all' ? cases : cases.filter(c => c.category === activeTab);
 
   return (
-    <section id="resultados" className="py-24 lg:py-36 bg-[#9C5E33] text-white relative overflow-hidden">
+    <section id="resultados" className="py-16 sm:py-24 lg:py-36 bg-[#9C5E33] text-white relative overflow-hidden">
       
       {/* Background Glow */}
       <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#FCE794]/15 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 relative z-10">
         
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-3 block">
+        <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
+          <span className="text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-2 sm:mb-3 block">
             Galeria Instagram & Casos Clínicos
           </span>
 
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight mb-4">
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight mb-3 sm:mb-4">
             Resultados que você consegue{' '}
             <span className="italic font-normal text-[#FCE794]">ver.</span>
           </h2>
 
-          <p className="font-sans text-base text-white/90 font-light">
+          <p className="font-sans text-sm sm:text-base text-white/90 font-light">
             Cada caso começa com um planejamento rigoroso. Clique na imagem para expandir os detalhes do procedimento.
           </p>
         </div>
 
-        {/* High Contrast Filter Bar */}
-        <div className="max-w-2xl mx-auto mb-12">
-          <div className="bg-[#FFFFFF] rounded-full p-2 border border-white/40 shadow-2xl flex items-center justify-between">
-            <div className="flex items-center pl-4 pr-2 text-[#3E2312]">
-              <Search className="w-4 h-4 text-[#9C5E33] mr-2" />
-              <span className="text-xs font-bold uppercase tracking-wider text-[#3E2312] hidden sm:inline">
+        {/* Filter Bar */}
+        <div className="max-w-2xl mx-auto mb-8 sm:mb-12">
+          <div className="bg-[#FFFFFF] rounded-2xl sm:rounded-full p-2 border border-white/40 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div className="flex items-center pl-3 pr-2 text-[#3E2312] w-full sm:w-auto">
+              <Search className="w-4 h-4 text-[#9C5E33] mr-2 shrink-0" />
+              <span className="text-xs font-bold uppercase tracking-wider text-[#3E2312]">
                 Filtrar:
               </span>
             </div>
 
-            <div className="flex items-center space-x-1 sm:space-x-2 overflow-x-auto py-1">
+            <div className="flex items-center space-x-1 sm:space-x-2 overflow-x-auto w-full py-1 no-scrollbar">
               {[
                 { id: 'all', label: 'Todos' },
                 { id: 'facetas', label: 'Facetas' },
@@ -96,7 +96,7 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
-                  className={`px-4 py-2 rounded-full text-xs uppercase tracking-editorial font-bold transition-all duration-300 ${
+                  className={`px-3.5 py-2.5 min-h-[44px] rounded-full text-xs uppercase tracking-editorial font-bold transition-all duration-300 whitespace-nowrap flex items-center justify-center ${
                     activeTab === tab.id
                       ? 'bg-[#3E2312] text-[#FCE794] shadow-md'
                       : 'bg-[#F5F2ED] text-[#3E2312] hover:bg-[#9C5E33] hover:text-white'
@@ -109,8 +109,8 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
           </div>
         </div>
 
-        {/* CLEAN EXPANDABLE ANIMATION GALLERY COMPONENT */}
-        <div className="mb-16">
+        {/* EXPANDABLE ANIMATION GALLERY COMPONENT */}
+        <div className="mb-12 sm:mb-16">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -129,8 +129,8 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
         </div>
 
         {/* Bottom CTA Banner */}
-        <div className="mt-16 text-center">
-          <div className="max-w-xl mx-auto p-4 bg-[#FFFFFF] rounded-full shadow-2xl border border-white/40 flex flex-col sm:flex-row items-center justify-between text-[#3E2312] space-y-3 sm:space-y-0 px-6">
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="max-w-xl mx-auto p-4 bg-[#FFFFFF] rounded-2xl sm:rounded-full shadow-2xl border border-white/40 flex flex-col sm:flex-row items-center justify-between text-[#3E2312] gap-3 px-6">
             <div className="flex items-center space-x-2 text-left">
               <Instagram className="w-5 h-5 text-[#9C5E33] shrink-0" />
               <span className="text-xs font-bold text-[#3E2312]">
@@ -139,7 +139,7 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
             </div>
             <button
               onClick={onOpenModal}
-              className="px-6 py-2.5 bg-[#9C5E33] hover:bg-[#3E2312] text-white hover:text-[#FCE794] font-bold text-xs uppercase tracking-editorial rounded-full transition-all duration-300 shadow"
+              className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-[#9C5E33] hover:bg-[#3E2312] text-white hover:text-[#FCE794] font-bold text-xs uppercase tracking-editorial rounded-full transition-all duration-300 shadow flex items-center justify-center"
             >
               SOLICITAR MOCKUP 3D
             </button>

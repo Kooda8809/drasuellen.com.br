@@ -30,65 +30,57 @@ export const PatientJourneySection: React.FC = () => {
   ];
 
   return (
-    <section id="jornada" className="py-24 lg:py-36 bg-cream border-t border-espresso/10 relative">
-      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+    <section id="jornada" className="py-16 sm:py-24 lg:py-36 bg-cream border-t border-espresso/10 relative">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-xs uppercase tracking-editorial text-primary font-bold mb-3 block"
-          >
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
+          <span className="text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
             Jornada do Paciente
-          </motion.span>
+          </span>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight"
-          >
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight">
             Do primeiro contato ao seu{' '}
             <span className="italic font-normal text-primary">novo sorriso.</span>
-          </motion.h2>
+          </h2>
         </div>
 
-        {/* Timeline Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+        {/* Vertical Timeline on Mobile / 4-Col Cards on Desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 relative">
           
-          {/* Connector Line */}
+          {/* Desktop Connector Line */}
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-[2px] bg-primary/20 -translate-y-12 -z-0" />
 
           {steps.map((step, idx) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: idx * 0.15 }}
-              className="relative z-10 bg-white p-8 rounded-2xl border border-espresso/10 shadow-sm hover:shadow-md transition-all flex flex-col justify-between"
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="relative z-10 bg-white p-6 sm:p-8 rounded-2xl border border-espresso/10 shadow-sm border-l-4 border-l-primary md:border-l-espresso/10 flex flex-col justify-between"
             >
               <div>
-                <div className="w-12 h-12 rounded-full bg-cream border border-espresso/10 flex items-center justify-center font-serif text-lg font-bold text-primary mb-6 shadow-inner">
-                  {step.number}
+                <div className="flex items-center space-x-3 mb-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cream border border-espresso/10 flex items-center justify-center font-serif text-base sm:text-lg font-bold text-primary shadow-inner shrink-0">
+                    {step.number}
+                  </div>
+                  <div>
+                    <h3 className="font-sans text-xs uppercase tracking-editorial font-bold text-espresso">
+                      {step.title}
+                    </h3>
+                    <span className="font-serif italic text-xs text-primary font-normal block">
+                      {step.subtitle}
+                    </span>
+                  </div>
                 </div>
 
-                <h3 className="font-sans text-xs uppercase tracking-editorial font-bold text-espresso mb-1">
-                  {step.title}
-                </h3>
-                <span className="font-serif italic text-xs text-primary font-normal block mb-4">
-                  {step.subtitle}
-                </span>
-
-                <p className="text-xs text-espresso/85 font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
                   {step.description}
                 </p>
               </div>
 
-              <div className="mt-8 pt-4 border-t border-espresso/10 text-[10px] uppercase tracking-widest text-espresso/60 font-semibold">
+              <div className="mt-6 pt-3 border-t border-espresso/10 text-[10px] uppercase tracking-widest text-espresso/60 font-semibold">
                 Etapa 0{idx + 1} de 04
               </div>
             </motion.div>

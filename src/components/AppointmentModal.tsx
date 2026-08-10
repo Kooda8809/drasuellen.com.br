@@ -46,28 +46,28 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 overflow-y-auto">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={handleReset}
-            className="fixed inset-0 bg-espresso/70 backdrop-blur-sm"
+            className="fixed inset-0 bg-espresso/75 backdrop-blur-sm"
           />
 
-          {/* Modal Content */}
+          {/* Bottom Sheet on Mobile / Centered Modal on Tablet & Desktop */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 100 }}
             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative w-full max-w-lg bg-cream border border-espresso/10 shadow-2xl rounded-2xl overflow-hidden z-10 my-8 p-6 sm:p-8 text-espresso"
+            className="relative w-full max-w-lg max-h-[85vh] overflow-y-auto bg-cream border border-espresso/10 shadow-2xl rounded-t-3xl sm:rounded-2xl z-10 p-5 sm:p-8 text-espresso"
           >
             {/* Close Button */}
             <button
               onClick={handleReset}
-              className="absolute top-6 right-6 p-2 text-espresso/70 hover:text-primary transition-colors rounded-full hover:bg-white"
+              className="absolute top-4 right-4 p-2.5 min-h-[44px] min-w-[44px] text-espresso/70 hover:text-primary transition-colors rounded-full hover:bg-white flex items-center justify-center"
               aria-label="Fechar modal"
             >
               <X className="w-5 h-5" />
@@ -78,10 +78,10 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                 <span className="text-xs uppercase tracking-editorial text-primary font-bold block mb-1">
                   Atendimento Exclusivo
                 </span>
-                <h3 className="font-serif text-2xl sm:text-3xl font-normal text-espresso mb-2">
+                <h3 className="font-serif text-xl sm:text-3xl font-normal text-espresso mb-2">
                   Agendar sua <span className="italic font-normal text-primary">avaliação</span>
                 </h3>
-                <p className="text-sm text-espresso/80 mb-6 font-light leading-relaxed">
+                <p className="text-xs sm:text-sm text-espresso/80 mb-5 font-light leading-relaxed">
                   Preencha os dados abaixo para darmos início ao planejamento personalizado do seu novo sorriso em Manaus.
                 </p>
 
@@ -96,7 +96,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                       placeholder="Ex: Maria Clara Silva"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
+                      className="w-full px-4 py-3 min-h-[44px] bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
                     />
                   </div>
 
@@ -110,7 +110,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                       placeholder="(92) 99999-9999"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      className="w-full px-4 py-3 bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
+                      className="w-full px-4 py-3 min-h-[44px] bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
                     />
                   </div>
 
@@ -122,7 +122,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                       <select
                         value={formData.treatment}
                         onChange={(e) => setFormData({ ...formData, treatment: e.target.value })}
-                        className="w-full px-4 py-3 bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
+                        className="w-full px-4 py-3 min-h-[44px] bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
                       >
                         <option value="Facetas de Porcelana">Facetas de Porcelana</option>
                         <option value="Implantes Dentários">Implantes Dentários</option>
@@ -139,7 +139,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                       <select
                         value={formData.preferredTime}
                         onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                        className="w-full px-4 py-3 bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
+                        className="w-full px-4 py-3 min-h-[44px] bg-white border border-espresso/15 focus:border-primary rounded-xl focus:outline-none focus:ring-1 focus:ring-primary text-sm transition-all"
                       >
                         <option value="Manhã">Manhã (08h - 12h)</option>
                         <option value="Tarde">Tarde (14h - 18h)</option>
@@ -161,26 +161,26 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                     />
                   </div>
 
-                  {/* LGPD Consent Checkbox */}
-                  <div className="mt-4 flex items-start gap-3">
+                  {/* LGPD Consent Checkbox with Large Touch Area */}
+                  <div className="mt-3 flex items-start gap-3">
                     <input
                       type="checkbox"
                       id="lgpd-consent"
                       checked={acceptedTerms}
                       onChange={(e) => setAcceptedTerms(e.target.checked)}
-                      className="mt-1 h-4 w-4 accent-primary cursor-pointer"
+                      className="mt-0.5 h-5 w-5 min-w-[20px] accent-primary cursor-pointer shrink-0"
                     />
                     <label htmlFor="lgpd-consent" className="text-xs text-espresso/80 leading-relaxed cursor-pointer select-none">
                       Concordo com a <a href="#" className="underline text-primary font-medium">Política de Privacidade</a> e autorizo o contato para agendamento.
                     </label>
                   </div>
 
-                  {/* Submit Button (Disabled if Privacy Terms are not accepted) */}
+                  {/* Submit Button */}
                   <div className="pt-2">
                     <button
                       type="submit"
                       disabled={!acceptedTerms}
-                      className={`w-full py-4 bg-accent hover:bg-accent-hover text-espresso font-bold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center space-x-2 ${
+                      className={`w-full min-h-[44px] py-4 bg-accent hover:bg-accent-hover text-espresso font-bold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center space-x-2 ${
                         !acceptedTerms ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] hover:shadow-lg'
                       }`}
                     >
@@ -204,15 +204,15 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                 >
                   <CheckCircle2 className="w-10 h-10" />
                 </motion.div>
-                <h4 className="font-serif text-2xl text-espresso mb-2">
+                <h4 className="font-serif text-xl sm:text-2xl text-espresso mb-2">
                   Solicitação registrada com <span className="italic font-normal text-primary">sucesso</span>
                 </h4>
-                <p className="text-sm text-espresso/80 mb-6">
+                <p className="text-xs sm:text-sm text-espresso/80 mb-6">
                   Redirecionando você para o WhatsApp da equipe da Dra. Suellen Campos...
                 </p>
                 <button
                   onClick={handleReset}
-                  className="text-xs uppercase tracking-wide text-primary font-bold hover:underline"
+                  className="text-xs uppercase tracking-wide text-primary font-bold hover:underline min-h-[44px] flex items-center justify-center mx-auto"
                 >
                   Fechar janela
                 </button>

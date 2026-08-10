@@ -28,93 +28,127 @@ export const Header: React.FC = () => {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? 'bg-[#9C5E33]/95 backdrop-blur-md py-4 shadow-xl border-b border-white/10'
-          : 'bg-transparent py-6 border-none'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
-        
-        {/* Left Side: Brand Logo (Appears smoothly only after scrolling) */}
-        <div className="w-1/4 sm:w-1/3 flex justify-start">
-          <div
-            className={`transition-all duration-500 ${
-              isScrolled ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
-            }`}
-          >
+    <>
+      <header
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
+          isScrolled
+            ? 'bg-[#9C5E33] backdrop-blur-md py-3 shadow-md border-b border-white/10'
+            : 'bg-transparent py-4 sm:py-6 border-none'
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
+          
+          {/* Left Side: Brand Logo */}
+          <div className="flex justify-start">
             <a href="#" className="group flex flex-col">
-              <span className="font-serif tracking-widest text-base sm:text-lg font-medium text-white whitespace-nowrap">
+              <span className={`font-serif tracking-widest text-sm sm:text-base font-semibold text-white whitespace-nowrap transition-opacity duration-300 ${
+                isScrolled ? 'opacity-100' : 'opacity-95'
+              }`}>
                 DRA. SUELLEN CAMPOS
               </span>
-              <span className="text-[9px] tracking-[0.25em] uppercase text-[#FCE794] font-semibold">
+              <span className="text-[9px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
                 Odontologia Estética
               </span>
             </a>
           </div>
-        </div>
 
-        {/* Center: Navigation Links (PERFECTLY CENTERED ON SCREEN) */}
-        <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-xs uppercase tracking-editorial text-white/90 hover:text-[#FCE794] transition-colors duration-300 relative py-1 font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#FCE794] hover:after:w-full after:transition-all after:duration-300 drop-shadow-md whitespace-nowrap"
+          {/* Center: Desktop Navigation Links (Hidden on Mobile) */}
+          <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
+            {navLinks.map((link) => (
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-xs uppercase tracking-editorial text-white/90 hover:text-[#FCE794] transition-colors duration-300 relative py-1 font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#FCE794] hover:after:w-full after:transition-all after:duration-300 drop-shadow-md whitespace-nowrap min-h-[44px] flex items-center"
+              >
+                {link.name}
+              </a>
+            ))}
+          </nav>
+
+          {/* Right Side: Mobile Hamburger Button */}
+          <div className="lg:hidden flex items-center">
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              className="p-2.5 min-h-[44px] min-w-[44px] text-white hover:text-[#FCE794] focus:outline-none flex items-center justify-center bg-white/10 rounded-full border border-white/20"
+              aria-label="Abrir menu de navegação"
             >
-              {link.name}
-            </a>
-          ))}
-        </nav>
+              <Menu className="w-6 h-6" />
+            </button>
+          </div>
 
-        {/* Right Side: Balanced Spacer / Mobile Button */}
-        <div className="w-1/4 sm:w-1/3 flex justify-end">
-          {/* Mobile Hamburger Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden p-2 text-white focus:outline-none drop-shadow"
-            aria-label="Abrir menu"
-          >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
+      </header>
 
-      </div>
-
-      {/* Mobile Overlay Menu */}
+      {/* Mobile Drawer Navigation (Sliding in from Right) */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="lg:hidden bg-[#2D1612] border-b border-white/20 px-6 py-6 shadow-2xl text-white"
-          >
-            <div className="flex flex-col space-y-4">
-              <div className="pb-3 border-b border-white/10">
-                <span className="font-serif tracking-widest text-lg font-medium text-white block">
-                  DRA. SUELLEN CAMPOS
+          <div className="fixed inset-0 z-50 lg:hidden">
+            {/* Backdrop Overlay */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileMenuOpen(false)}
+              className="fixed inset-0 bg-[#3E2312]/80 backdrop-blur-sm"
+            />
+
+            {/* Slide-out Drawer Container */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 w-4/5 max-w-xs bg-[#2D1612] border-l border-white/15 shadow-2xl p-6 flex flex-col justify-between z-50 text-white"
+            >
+              {/* Top Drawer Header & Close Button */}
+              <div>
+                <div className="flex items-center justify-between pb-6 border-b border-white/15">
+                  <div className="flex flex-col">
+                    <span className="font-serif tracking-widest text-base font-bold text-white">
+                      DRA. SUELLEN CAMPOS
+                    </span>
+                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
+                      Odontologia Estética
+                    </span>
+                  </div>
+
+                  <button
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="p-2 min-h-[44px] min-w-[44px] text-white hover:text-[#FCE794] flex items-center justify-center bg-white/10 rounded-full"
+                    aria-label="Fechar menu"
+                  >
+                    <X className="w-6 h-6" />
+                  </button>
+                </div>
+
+                {/* Vertical Navigation Links */}
+                <nav className="flex flex-col mt-6 space-y-1">
+                  {navLinks.map((link) => (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-base uppercase tracking-editorial font-medium text-white hover:text-[#FCE794] py-4 border-b border-white/10 flex items-center min-h-[44px] transition-colors"
+                    >
+                      {link.name}
+                    </a>
+                  ))}
+                </nav>
+              </div>
+
+              {/* Drawer Footer Info */}
+              <div className="pt-6 border-t border-white/10 text-center">
+                <span className="text-[10px] uppercase tracking-widest text-[#FCE794] font-semibold block mb-1">
+                  Manaus • Amazonas
                 </span>
-                <span className="text-[10px] tracking-[0.25em] uppercase text-[#FCE794] font-semibold">
-                  Odontologia Estética
+                <span className="text-xs text-white/70 font-light block">
+                  Atendimento Presencial sob Agendamento
                 </span>
               </div>
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="text-sm uppercase tracking-editorial font-medium text-white hover:text-[#FCE794] py-2 border-b border-white/10"
-                >
-                  {link.name}
-                </a>
-              ))}
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, Minus } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 interface FAQSectionProps {
   onOpenModal: () => void;
@@ -53,33 +53,22 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
   ];
 
   return (
-    <section id="faq" className="py-24 lg:py-36 bg-cream border-t border-espresso/10">
-      <div className="max-w-4xl mx-auto px-6 lg:px-12">
+    <section id="faq" className="py-16 sm:py-24 lg:py-36 bg-cream border-t border-espresso/10">
+      <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12">
         
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <motion.span
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-xs uppercase tracking-editorial text-primary font-bold mb-3 block"
-          >
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
             Esclarecimentos Clínicos
-          </motion.span>
+          </span>
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight"
-          >
+          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight">
             Perguntas <span className="italic font-normal text-primary">frequentes.</span>
-          </motion.h2>
+          </h2>
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
             return (
@@ -93,13 +82,13 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
               >
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
-                  className="w-full p-6 text-left flex items-center justify-between space-x-4 focus:outline-none"
+                  className="w-full min-h-[44px] p-4 sm:p-6 text-left flex items-center justify-between space-x-4 focus:outline-none"
                 >
-                  <span className="font-serif text-lg text-espresso font-medium">
+                  <span className="font-serif text-sm sm:text-lg text-espresso font-medium leading-snug">
                     {faq.question}
                   </span>
-                  <div className={`p-2 rounded-full transition-colors duration-300 shrink-0 ${isOpen ? 'bg-primary text-white' : 'bg-cream text-espresso'}`}>
-                    {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}
+                  <div className={`p-1.5 rounded-full transition-transform duration-300 shrink-0 ${isOpen ? 'bg-primary text-white rotate-180' : 'bg-cream text-espresso'}`}>
+                    <ChevronDown className="w-4 h-4" />
                   </div>
                 </button>
 
@@ -112,7 +101,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
                       transition={{ duration: 0.3 }}
                       className="border-t border-espresso/10"
                     >
-                      <div className="p-6 pt-4 text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
+                      <div className="p-4 sm:p-6 pt-3 text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -124,13 +113,13 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
         </div>
 
         {/* FAQ CTA */}
-        <div className="mt-12 text-center">
-          <p className="text-xs text-espresso/70 mb-4">
+        <div className="mt-10 sm:mt-12 text-center">
+          <p className="text-xs text-espresso/70 mb-3">
             Possui outra dúvida específica sobre o seu caso?
           </p>
           <button
             onClick={onOpenModal}
-            className="text-xs uppercase tracking-editorial font-bold text-primary hover:text-espresso underline underline-offset-4"
+            className="min-h-[44px] text-xs uppercase tracking-editorial font-bold text-primary hover:text-espresso underline underline-offset-4 inline-flex items-center justify-center"
           >
             FALAR DIRETAMENTE COM A EQUIPE
           </button>
