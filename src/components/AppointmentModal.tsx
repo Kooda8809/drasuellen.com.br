@@ -9,6 +9,7 @@ interface AppointmentModalProps {
 
 export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onClose }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -19,8 +20,11 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!acceptedTerms) return;
+
     setSubmitted(true);
     setTimeout(() => {
+      const phone = import.meta.env.VITE_WHATSAPP_NUMBER || '5592999999999';
       const text = encodeURIComponent(
         `Olá, Dra. Suellen! Gostaria de agendar uma avaliação.\n\n` +
         `*Nome:* ${formData.name}\n` +
@@ -29,12 +33,13 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
         `*Período preferido:* ${formData.preferredTime}\n` +
         (formData.message ? `*Mensagem:* ${formData.message}` : '')
       );
-      window.open(`https://wa.me/5592999999999?text=${text}`, '_blank');
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
     }, 1200);
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setAcceptedTerms(false);
     onClose();
   };
 
@@ -156,10 +161,28 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                     />
                   </div>
 
+                  {/* LGPD Consent Checkbox */}
+                  <div className="mt-4 flex items-start gap-3">
+                    <input
+                      type="checkbox"
+                      id="lgpd-consent"
+                      checked={acceptedTerms}
+                      onChange={(e) => setAcceptedTerms(e.target.checked)}
+                      className="mt-1 h-4 w-4 accent-primary cursor-pointer"
+                    />
+                    <label htmlFor="lgpd-consent" className="text-xs text-espresso/80 leading-relaxed cursor-pointer select-none">
+                      Concordo com a <a href="#" className="underline text-primary font-medium">Política de Privacidade</a> e autorizo o contato para agendamento.
+                    </label>
+                  </div>
+
+                  {/* Submit Button (Disabled if Privacy Terms are not accepted) */}
                   <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-4 bg-accent hover:bg-accent-hover text-espresso font-bold text-xs uppercase tracking-editorial rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center space-x-2"
+                      disabled={!acceptedTerms}
+                      className={`w-full py-4 bg-accent hover:bg-accent-hover text-espresso font-bold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center space-x-2 ${
+                        !acceptedTerms ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] hover:shadow-lg'
+                      }`}
                     >
                       <Calendar className="w-4 h-4 text-espresso" />
                       <span>Confirmar e Enviar pelo WhatsApp</span>
