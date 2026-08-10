@@ -14,37 +14,57 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
     {
       id: 'caso-1',
       category: 'facetas',
-      title: 'Caso 01 — Facetas em Cerâmica',
-      procedure: '10 Facetas ultra-finas de porcelana',
-      description: 'Harmonização de cor, fechamento de diastema e redefinição da linha do sorriso mantendo a anatomia natural.',
-      image: '/images/case1.avif',
+      title: 'Caso 01 — Facetas em Resina Compostos',
+      procedure: 'Lentes / Facetas em Resina de Alta Performance',
+      description: 'Escultura dental em resina composta premium com fechamento de diastema, refinamento anatômico e brilho natural em sessão única.',
+      image: '/images/facetas_em_resina_w3.avif',
       tag: 'Facetas'
     },
     {
       id: 'caso-2',
-      category: 'reabilitacao',
-      title: 'Caso 02 — Reabilitação Oral Completa',
-      procedure: 'Restabelecimento de dimensão vertical e função',
-      description: 'Devolução de suporte labial, conforto mastigatório e estética rejuvenescida através de planejamento digital.',
-      image: '/images/case2.avif',
-      tag: 'Reabilitação'
+      category: 'facetas',
+      title: 'Caso 02 — Facetas em Resina Premium',
+      procedure: 'Harmonização de Sorriso em Resinas Especiais',
+      description: 'Correção de proporções faciais, zênite gengival e incisais com máxima preservação biológica da estrutura dental.',
+      image: '/images/facetas_em_resina_w4.avif',
+      tag: 'Facetas'
     },
     {
       id: 'caso-3',
-      category: 'implante',
-      title: 'Caso 03 — Implante e Prótese Cerâmica',
-      procedure: 'Implante unitário com coroa sob medida',
-      description: 'Substituição imperceptível de dente fraturado com emergência gengival perfeita.',
-      image: '/images/facetas.avif',
-      tag: 'Implante'
+      category: 'facetas',
+      title: 'Caso 03 — Lentes de Contato Dentais',
+      procedure: 'Lentes Cerâmicas Ultra-Finas de Porcelana',
+      description: 'Transformação completa de forma, alinhamento e tonalidade com lâminas de cerâmica imperceptíveis e brilhantes.',
+      image: '/images/lente_de_contato_dental_antes_e_depois.avif',
+      tag: 'Facetas'
     },
     {
       id: 'caso-4',
+      category: 'implante',
+      title: 'Caso 04 — Lente de Porcelana & Implante',
+      procedure: 'Implante Osseointegrado + Coroa e Lentes Cerâmicas',
+      description: 'Reabilitação estética e funcional associando implante unitário de alta precisão a lentes de porcelana sob medida.',
+      image: '/images/lente_de_porcelana_e_implante_depois.avif',
+      beforeImage: '/images/lente_de_porcelana_e_implante_antes.avif',
+      tag: 'Implante'
+    },
+    {
+      id: 'caso-5',
+      category: 'reabilitacao',
+      title: 'Caso 05 — Reabilitação Oral Completa',
+      procedure: 'Restabelecimento Oclusal e Suporte Facial',
+      description: 'Devolução de dimensão vertical, conforto mastigatório e rejuvenescimento do sorriso através de planejamento 3D DSD.',
+      image: '/images/transformacao_depois_1.avif',
+      beforeImage: '/images/transformacao_antes_1.avif',
+      tag: 'Reabilitação'
+    },
+    {
+      id: 'caso-6',
       category: 'estetica',
-      title: 'Caso 04 — Estética e Plástica Gengival',
-      procedure: 'Gengivoplastia + Clareamento de alta performance',
-      description: 'Ajuste do zênite gengival para equilibrar a proporção dente-gengiva e recuperar o brilho natural.',
-      image: '/images/estetica.avif',
+      title: 'Caso 06 — Estética Radiante do Sorriso',
+      procedure: 'Gengivoplastia + Clareamento de Alta Performance',
+      description: 'Harmonização entre a arquitetura gengival e o brilho do esmalte dental para um resultado radiante e jovial.',
+      image: '/images/transformacao_1.avif',
       tag: 'Estética'
     }
   ];
@@ -62,7 +82,7 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
           <span className="font-montserrat text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-2 sm:mb-3 block">
-            Galeria Instagram & Casos Clínicos
+            Galeria de Tratamentos & Casos Clínicos
           </span>
 
           <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 sm:mb-4">
@@ -71,7 +91,7 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
           </h2>
 
           <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/90 font-light">
-            Cada caso começa com um planejamento rigoroso. Clique na imagem para expandir os detalhes do procedimento.
+            Cada caso começa com um planejamento rigoroso. Clique na imagem para expandir os detalhes do procedimento e comparar o antes e depois.
           </p>
         </div>
 

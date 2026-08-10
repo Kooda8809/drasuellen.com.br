@@ -9,6 +9,7 @@ export interface CaseItem {
   procedure: string;
   description: string;
   image: string;
+  beforeImage?: string;
   tag: string;
 }
 
@@ -25,19 +26,23 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
 }) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [activeView, setActiveView] = useState<'after' | 'before'>('after');
 
   const openImage = (index: number) => {
     setSelectedIndex(index);
+    setActiveView('after');
   };
 
   const closeImage = () => {
     setSelectedIndex(null);
+    setActiveView('after');
   };
 
   const goToNext = (e: React.MouseEvent) => {
     e.stopPropagation();
     if (selectedIndex !== null) {
       setSelectedIndex((selectedIndex + 1) % cases.length);
+      setActiveView('after');
     }
   };
 
@@ -45,6 +50,7 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
     e.stopPropagation();
     if (selectedIndex !== null) {
       setSelectedIndex((selectedIndex - 1 + cases.length) % cases.length);
+      setActiveView('after');
     }
   };
 
@@ -56,15 +62,20 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
   };
 
   const selectedCase = selectedIndex !== null ? cases[selectedIndex] : null;
+  const currentDisplayedImage = selectedCase
+    ? activeView === 'before' && selectedCase.beforeImage
+      ? selectedCase.beforeImage
+      : selectedCase.image
+    : '';
 
   return (
     <div className={className}>
       {/* Mobile 2-Column Grid / Desktop Horizontal Expandable Bar */}
-      <div className="grid grid-cols-2 md:flex gap-3 min-h-[320px] sm:min-h-[380px] md:h-[440px] w-full">
+      <div className="grid grid-cols-2 md:flex gap-3.5 min-h-[320px] sm:min-h-[380px] md:h-[440px] w-full">
         {cases.map((c, index) => (
           <motion.div
             key={c.id}
-            className="relative cursor-pointer overflow-hidden rounded-2xl border-2 border-white/20 shadow-xl group h-40 sm:h-48 md:h-full"
+            className="relative cursor-pointer overflow-hidden rounded-2xl border-2 border-white/20 shadow-xl group h-44 sm:h-52 md:h-full"
             style={{ flex: 1 }}
             animate={{ flex: getFlexValue(index) }}
             transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
@@ -148,23 +159,49 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
               className="relative w-[95%] max-w-5xl my-auto z-20 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center max-h-[85vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Image Container */}
+              {/* Main Displayed Image Container */}
               <motion.div
-                key={selectedIndex}
+                key={`${selectedIndex}-${activeView}`}
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
-                className="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-[#FCE794] bg-[#3E2312] aspect-[4/3] sm:aspect-[16/10]"
+                className="lg:col-span-7 rounded-2xl overflow-hidden shadow-2xl border-2 sm:border-4 border-[#FCE794] bg-[#3E2312] aspect-[4/3] sm:aspect-[16/10] relative"
               >
                 <picture>
-                  <source srcSet={selectedCase.image} type="image/avif" />
+                  <source srcSet={currentDisplayedImage} type="image/avif" />
                   <img
-                    src={selectedCase.image}
+                    src={currentDisplayedImage}
                     alt={selectedCase.title}
                     className="w-full h-full object-cover"
                   />
                 </picture>
+
+                {/* Before / After Toggle Buttons if beforeImage exists */}
+                {selectedCase.beforeImage && (
+                  <div className="absolute top-3 left-3 z-20 flex space-x-2 bg-[#3E2312]/80 backdrop-blur-md p-1 rounded-full border border-white/20 shadow-lg font-montserrat">
+                    <button
+                      onClick={() => setActiveView('before')}
+                      className={`px-3 py-1.5 rounded-full text-[10px] uppercase font-bold transition-all min-h-[36px] flex items-center ${
+                        activeView === 'before'
+                          ? 'bg-[#FCE794] text-[#3E2312] shadow'
+                          : 'text-white/80 hover:text-white'
+                      }`}
+                    >
+                      Antes
+                    </button>
+                    <button
+                      onClick={() => setActiveView('after')}
+                      className={`px-3 py-1.5 rounded-full text-[10px] uppercase font-bold transition-all min-h-[36px] flex items-center ${
+                        activeView === 'after'
+                          ? 'bg-[#FCE794] text-[#3E2312] shadow'
+                          : 'text-white/80 hover:text-white'
+                      }`}
+                    >
+                      Depois
+                    </button>
+                  </div>
+                )}
               </motion.div>
 
               {/* White Detailed Case Card */}
