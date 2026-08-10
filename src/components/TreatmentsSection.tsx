@@ -74,19 +74,19 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
+          <span className="font-montserrat text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
             Especialidades Clínicas
           </span>
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight mb-3 sm:mb-4">
+          <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-espresso leading-tight mb-3 sm:mb-4">
             Tratamentos executados sob{' '}
-            <span className="italic font-normal text-primary">medida.</span>
+            <span className="font-playfair italic text-primary">medida.</span>
           </h2>
-          <p className="font-sans text-sm sm:text-base text-espresso/80 font-light leading-relaxed">
+          <p className="font-montserrat text-sm sm:text-base md:text-lg text-espresso/80 font-light leading-relaxed">
             Soluções personalizadas que unem alta tecnologia digital, odontologia conservadora e refinamento estético em Manaus.
           </p>
         </div>
 
-        {/* Responsive Grid Cards (1 col on Mobile, 2 on Tablet, 4 on Desktop) */}
+        {/* Responsive Grid Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {treatments.map((t) => (
             <motion.div
@@ -109,23 +109,23 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                   </picture>
                   <div className="absolute inset-0 bg-gradient-to-t from-espresso/60 via-transparent to-transparent opacity-80" />
                   <div className="absolute bottom-3 left-3 right-3 text-white">
-                    <span className="text-[10px] uppercase tracking-wider text-accent font-bold block mb-0.5">
+                    <span className="font-montserrat text-[10px] uppercase tracking-wider text-accent font-bold block mb-0.5">
                       {t.subtitle}
                     </span>
-                    <h3 className="font-serif text-lg font-medium leading-tight">
+                    <h3 className="font-playfair text-lg font-semibold leading-tight">
                       {t.title}
                     </h3>
                   </div>
                 </div>
 
                 <div className="p-4 sm:p-5">
-                  <p className="text-xs sm:text-sm text-espresso/85 font-light leading-relaxed mb-4 line-clamp-3">
+                  <p className="font-montserrat text-xs sm:text-sm text-espresso/85 font-light leading-relaxed mb-4 line-clamp-3">
                     {t.description}
                   </p>
 
                   <div className="space-y-1.5 mb-4">
                     {t.highlights.slice(0, 2).map((item, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 text-[11px] text-espresso/90">
+                      <div key={idx} className="flex items-center space-x-2 font-montserrat text-[11px] text-espresso/90">
                         <Check className="w-3.5 h-3.5 text-primary shrink-0" />
                         <span className="truncate">{item}</span>
                       </div>
@@ -134,7 +134,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                 </div>
               </div>
 
-              <div className="p-4 sm:p-5 pt-0 border-t border-espresso/5 flex items-center justify-between">
+              <div className="p-4 sm:p-5 pt-0 border-t border-espresso/5 flex items-center justify-between font-montserrat">
                 <button
                   onClick={() => setSelectedTreatment(t.id)}
                   className="text-xs uppercase tracking-wide text-primary font-bold hover:underline flex items-center space-x-1 min-h-[44px]"
@@ -144,7 +144,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                 </button>
                 <button
                   onClick={onOpenModal}
-                  className="px-3.5 py-2 rounded-full bg-cream hover:bg-primary hover:text-white transition-all text-xs font-semibold text-espresso min-h-[44px] flex items-center"
+                  className="px-3.5 py-2 rounded-full bg-cream hover:bg-primary hover:text-white transition-all text-xs font-bold text-espresso min-h-[44px] flex items-center"
                 >
                   Agendar
                 </button>
@@ -183,22 +183,22 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                     ✕
                   </button>
 
-                  <span className="text-xs uppercase tracking-editorial text-primary font-bold block mb-1">
+                  <span className="font-montserrat text-xs uppercase tracking-editorial text-primary font-bold block mb-1">
                     {t.subtitle}
                   </span>
-                  <h3 className="font-serif text-2xl sm:text-3xl font-normal text-espresso mb-3">
+                  <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-espresso mb-3">
                     {t.title}
                   </h3>
-                  <p className="text-sm text-espresso/90 font-light leading-relaxed mb-6">
+                  <p className="font-montserrat text-sm text-espresso/90 font-light leading-relaxed mb-6">
                     {t.description}
                   </p>
 
                   <div className="bg-white p-4 rounded-xl border border-espresso/10 mb-6">
-                    <h4 className="font-serif text-sm text-espresso font-bold mb-3 flex items-center space-x-2">
+                    <h4 className="font-playfair text-sm text-espresso font-bold mb-3 flex items-center space-x-2">
                       <ShieldCheck className="w-4 h-4 text-primary" />
                       <span>Diferenciais deste tratamento</span>
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-espresso/80">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-montserrat text-xs text-espresso/80">
                       {t.highlights.map((h, i) => (
                         <div key={i} className="flex items-center space-x-2">
                           <Sparkles className="w-3.5 h-3.5 text-primary shrink-0" />
@@ -209,7 +209,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-espresso/10">
-                    <p className="text-xs text-espresso/70 italic">
+                    <p className="font-montserrat text-xs text-espresso/70 italic">
                       {t.indication}
                     </p>
                     <button
@@ -217,7 +217,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                         setSelectedTreatment(null);
                         onOpenModal();
                       }}
-                      className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-primary hover:bg-primary-hover text-white font-bold text-xs uppercase tracking-editorial rounded-full shadow-md shrink-0 flex items-center justify-center"
+                      className="w-full sm:w-auto min-h-[44px] px-6 py-3 bg-primary hover:bg-primary-hover text-white font-montserrat font-bold text-xs uppercase tracking-editorial rounded-full shadow-md shrink-0 flex items-center justify-center"
                     >
                       Solicitar Avaliação
                     </button>

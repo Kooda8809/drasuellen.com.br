@@ -38,27 +38,27 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
           
-          {/* Left Side: Brand Logo */}
+          {/* Left Side: Brand Logo (Playfair Display) */}
           <div className="flex justify-start">
             <a href="#" className="group flex flex-col">
-              <span className={`font-serif tracking-widest text-sm sm:text-base font-semibold text-white whitespace-nowrap transition-opacity duration-300 ${
+              <span className={`font-playfair tracking-widest text-sm sm:text-base font-bold text-white whitespace-nowrap transition-opacity duration-300 ${
                 isScrolled ? 'opacity-100' : 'opacity-95'
               }`}>
                 DRA. SUELLEN CAMPOS
               </span>
-              <span className="text-[9px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
+              <span className="font-montserrat text-[9px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
                 Odontologia Estética
               </span>
             </a>
           </div>
 
-          {/* Center: Desktop Navigation Links (Hidden on Mobile) */}
+          {/* Center: Desktop Navigation Links (Montserrat) */}
           <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs uppercase tracking-editorial text-white/90 hover:text-[#FCE794] transition-colors duration-300 relative py-1 font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#FCE794] hover:after:w-full after:transition-all after:duration-300 drop-shadow-md whitespace-nowrap min-h-[44px] flex items-center"
+                className="font-montserrat text-xs uppercase tracking-editorial text-white/90 hover:text-[#FCE794] transition-colors duration-300 relative py-1 font-semibold after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#FCE794] hover:after:w-full after:transition-all after:duration-300 drop-shadow-md whitespace-nowrap min-h-[44px] flex items-center"
               >
                 {link.name}
               </a>
@@ -79,7 +79,7 @@ export const Header: React.FC = () => {
         </div>
       </header>
 
-      {/* Mobile Drawer Navigation (Sliding in from Right) */}
+      {/* Mobile Drawer Navigation */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <div className="fixed inset-0 z-50 lg:hidden">
@@ -104,10 +104,10 @@ export const Header: React.FC = () => {
               <div>
                 <div className="flex items-center justify-between pb-6 border-b border-white/15">
                   <div className="flex flex-col">
-                    <span className="font-serif tracking-widest text-base font-bold text-white">
+                    <span className="font-playfair tracking-widest text-base font-bold text-white">
                       DRA. SUELLEN CAMPOS
                     </span>
-                    <span className="text-[10px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
+                    <span className="font-montserrat text-[10px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
                       Odontologia Estética
                     </span>
                   </div>
@@ -121,14 +121,14 @@ export const Header: React.FC = () => {
                   </button>
                 </div>
 
-                {/* Vertical Navigation Links */}
+                {/* Vertical Navigation Links (Montserrat) */}
                 <nav className="flex flex-col mt-6 space-y-1">
                   {navLinks.map((link) => (
                     <a
                       key={link.name}
                       href={link.href}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="text-base uppercase tracking-editorial font-medium text-white hover:text-[#FCE794] py-4 border-b border-white/10 flex items-center min-h-[44px] transition-colors"
+                      className="font-montserrat text-base uppercase tracking-editorial font-medium text-white hover:text-[#FCE794] py-4 border-b border-white/10 flex items-center min-h-[44px] transition-colors"
                     >
                       {link.name}
                     </a>
@@ -138,10 +138,10 @@ export const Header: React.FC = () => {
 
               {/* Drawer Footer Info */}
               <div className="pt-6 border-t border-white/10 text-center">
-                <span className="text-[10px] uppercase tracking-widest text-[#FCE794] font-semibold block mb-1">
+                <span className="font-montserrat text-[10px] uppercase tracking-widest text-[#FCE794] font-semibold block mb-1">
                   Manaus • Amazonas
                 </span>
-                <span className="text-xs text-white/70 font-light block">
+                <span className="font-montserrat text-xs text-white/70 font-light block">
                   Atendimento Presencial sob Agendamento
                 </span>
               </div>

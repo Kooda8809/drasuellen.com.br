@@ -33,21 +33,21 @@ export const TestimonialsSection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-          <span className="text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-2 sm:mb-3 block">
+          <span className="font-montserrat text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-2 sm:mb-3 block">
             Prova Social & Avaliações
           </span>
 
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight mb-3 sm:mb-4">
+          <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 sm:mb-4">
             A opinião de quem já transformou o{' '}
-            <span className="italic font-normal text-[#FCE794]">sorriso.</span>
+            <span className="font-playfair italic text-[#FCE794]">sorriso.</span>
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-white/90 font-light">
+          <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/90 font-light">
             Depoimentos reais extraídos de avaliações verificadas de pacientes atendidos em Manaus/AM.
           </p>
         </div>
 
-        {/* Testimonial Cards Grid (1 col on Mobile, 3 on Desktop) */}
+        {/* Testimonial Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {testimonials.map((t, idx) => (
             <motion.div
@@ -69,22 +69,22 @@ export const TestimonialsSection: React.FC = () => {
                   <Quote className="w-6 h-6 text-[#9C5E33]/30" />
                 </div>
 
-                <p className="font-sans text-xs sm:text-sm text-[#3E2312] font-normal leading-relaxed mb-6 italic">
+                <p className="font-montserrat text-xs sm:text-sm text-[#3E2312] font-normal leading-relaxed mb-6 italic">
                   "{t.quote}"
                 </p>
               </div>
 
               <div className="pt-4 border-t border-[#3E2312]/10 flex items-center justify-between">
                 <div>
-                  <h4 className="font-serif font-bold text-sm text-[#3E2312]">
+                  <h4 className="font-playfair font-bold text-sm text-[#3E2312]">
                     {t.author}
                   </h4>
-                  <span className="text-[11px] text-[#9C5E33] font-medium block">
+                  <span className="font-montserrat text-[11px] text-[#9C5E33] font-medium block">
                     {t.role}
                   </span>
                 </div>
 
-                <div className="flex items-center space-x-1 px-2.5 py-1 bg-white rounded-full text-[9px] uppercase font-bold text-[#9C5E33] shadow-sm">
+                <div className="font-montserrat flex items-center space-x-1 px-2.5 py-1 bg-white rounded-full text-[9px] uppercase font-bold text-[#9C5E33] shadow-sm">
                   <CheckCircle2 className="w-3 h-3 text-[#9C5E33]" />
                   <span>Verificado</span>
                 </div>

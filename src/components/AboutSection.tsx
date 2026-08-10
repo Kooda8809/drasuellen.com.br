@@ -26,18 +26,18 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
                   <source srcSet="/images/about.avif" type="image/avif" />
                   <img
                     src="/images/about.avif"
-                    alt="Dra. Suellen Campos em seu consultório"
+                    alt="Dra. Suellen Campos em seu consultório em Manaus"
                     className="w-full h-full object-cover"
                   />
                 </picture>
               </div>
 
-              {/* Overlaid Quote Pill */}
+              {/* Overlaid Quote Pill (Playfair Display) */}
               <div className="absolute -bottom-5 right-2 sm:right-6 max-w-xs p-4 sm:p-5 bg-white shadow-xl rounded-2xl border border-espresso/10 text-espresso">
-                <p className="font-serif italic text-xs sm:text-sm text-primary font-medium mb-1">
+                <p className="font-playfair italic text-xs sm:text-sm text-primary font-medium mb-1">
                   "O detalhe é a ponte entre o comum e o inesquecível."
                 </p>
-                <span className="text-[10px] uppercase tracking-wider text-espresso/70 font-semibold block">
+                <span className="font-montserrat text-[10px] uppercase tracking-wider text-espresso/70 font-semibold block">
                   Dra. Suellen Campos
                 </span>
               </div>
@@ -52,20 +52,20 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-7 flex flex-col items-start text-espresso pt-4 sm:pt-0"
           >
-            <span className="text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3">
+            <span className="font-montserrat text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3">
               Sobre a Dra. Suellen Campos
             </span>
 
-            <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal leading-[1.2] mb-4 sm:mb-6">
+            <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold leading-[1.2] mb-4 sm:mb-6">
               Por trás de cada sorriso, existe uma{' '}
-              <span className="italic font-normal text-primary">história.</span>
+              <span className="font-playfair italic text-primary">história.</span>
             </h2>
 
-            <p className="font-sans text-base text-espresso/90 font-light leading-relaxed mb-4 sm:mb-6 text-left">
-              Especialista em Odontologia Estética e Reabilitação Oral em Manaus/AM, a Dra. Suellen Campos combina rigor científico, tecnologia de escaneamento digital e sensibilidade artística para desenhar sorrisos elegantes e naturalmente integrados à face.
+            <p className="font-montserrat text-base md:text-lg text-espresso/90 font-light leading-relaxed mb-4 sm:mb-6 text-left">
+              Especialista em Odontologia Estética e Reabilitação Oral em Manaus/AM, a Dra. Suellen Campos combina rigor científico, tecnologia de escaneamento digital e sensibilidade artística para desenhar sorrisos elegantes e naturally integrados à face.
             </p>
 
-            <p className="font-sans text-base text-espresso/85 font-light leading-relaxed mb-6 sm:mb-8 text-left">
+            <p className="font-montserrat text-base md:text-lg text-espresso/85 font-light leading-relaxed mb-6 sm:mb-8 text-left">
               Sua filosofia de trabalho baseia-se na escuta ativa e no respeito absoluto à anatomia original de cada paciente. Longe das soluções padronizadas, cada intervenção é milimetricamente planejada para entregar previsibilidade, conforto e durabilidade.
             </p>
 
@@ -76,10 +76,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
                   <Award className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-base text-espresso font-medium mb-1">
+                  <h4 className="font-playfair text-base text-espresso font-semibold mb-1">
                     Excelência Técnica
                   </h4>
-                  <p className="text-xs text-espresso/80 leading-normal font-light">
+                  <p className="font-montserrat text-xs text-espresso/80 leading-normal font-light">
                     Formação contínua nas técnicas estéticas e reabilitadoras mais avançadas.
                   </p>
                 </div>
@@ -90,10 +90,10 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
                   <Sparkles className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-serif text-base text-espresso font-medium mb-1">
+                  <h4 className="font-playfair text-base text-espresso font-semibold mb-1">
                     Planejamento Digital 3D
                   </h4>
-                  <p className="text-xs text-espresso/80 leading-normal font-light">
+                  <p className="font-montserrat text-xs text-espresso/80 leading-normal font-light">
                     Simulações e mockups que permitem visualizar seu resultado antes de iniciar.
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
 
             <button
               onClick={onOpenModal}
-              className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-4 bg-primary hover:bg-primary-hover text-white font-semibold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center"
+              className="w-full sm:w-auto min-h-[44px] px-6 sm:px-8 py-4 bg-primary hover:bg-primary-hover text-white font-montserrat font-bold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center"
             >
               AGENDAR AVALIAÇÃO COM A DRA. SUELLEN
             </button>

@@ -91,10 +91,10 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
 
             {/* Title & Tag Badge on Card */}
             <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 z-10">
-              <span className="inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#FFFFFF]/95 backdrop-blur-md rounded-full text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-[#9C5E33] shadow-md mb-1">
+              <span className="font-montserrat inline-block px-2.5 py-0.5 sm:px-3 sm:py-1 bg-[#FFFFFF]/95 backdrop-blur-md rounded-full text-[9px] sm:text-[10px] uppercase font-bold tracking-wider text-[#9C5E33] shadow-md mb-1">
                 {c.tag}
               </span>
-              <h4 className="font-serif text-xs sm:text-base text-white font-medium truncate drop-shadow-md">
+              <h4 className="font-playfair text-xs sm:text-base text-white font-medium truncate drop-shadow-md">
                 {c.title}
               </h4>
             </div>
@@ -102,7 +102,7 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
         ))}
       </div>
 
-      {/* Expanded View Modal (95% Screen Width on Mobile, Side-by-Side on Desktop) */}
+      {/* Expanded View Modal */}
       <AnimatePresence>
         {selectedIndex !== null && selectedCase && (
           <motion.div
@@ -112,7 +112,7 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
             className="fixed inset-0 z-50 flex items-center justify-center bg-[#2D1612]/95 backdrop-blur-md p-3 sm:p-8 overflow-y-auto"
             onClick={closeImage}
           >
-            {/* Mobile Touch-Friendly Close Button */}
+            {/* Close Button */}
             <button
               className="absolute top-4 right-4 z-30 text-white hover:text-[#FCE794] transition-colors p-2.5 min-h-[44px] min-w-[44px] bg-[#3E2312]/90 rounded-full border border-white/20 shadow-xl flex items-center justify-center"
               onClick={closeImage}
@@ -143,7 +143,7 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
               </button>
             )}
 
-            {/* Modal Content Grid: 95% Width on Mobile */}
+            {/* Modal Content Grid */}
             <motion.div
               className="relative w-[95%] max-w-5xl my-auto z-20 grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6 items-center max-h-[85vh] overflow-y-auto"
               onClick={(e) => e.stopPropagation()}
@@ -177,23 +177,23 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-[10px] uppercase tracking-editorial text-[#9C5E33] font-bold block">
+                    <span className="font-montserrat text-[10px] uppercase tracking-editorial text-[#9C5E33] font-bold block">
                       {selectedCase.procedure}
                     </span>
-                    <span className="px-2.5 py-1 bg-[#F5F2ED] rounded-full text-[9px] uppercase font-bold text-[#9C5E33]">
+                    <span className="font-montserrat px-2.5 py-1 bg-[#F5F2ED] rounded-full text-[9px] uppercase font-bold text-[#9C5E33]">
                       {selectedCase.tag}
                     </span>
                   </div>
 
-                  <h3 className="font-serif text-xl sm:text-3xl font-normal text-[#3E2312] mb-2 sm:mb-3">
+                  <h3 className="font-playfair text-xl sm:text-3xl font-bold text-[#3E2312] mb-2 sm:mb-3">
                     {selectedCase.title}
                   </h3>
 
-                  <p className="text-xs sm:text-sm text-[#3E2312]/90 font-light leading-relaxed mb-4 sm:mb-6">
+                  <p className="font-montserrat text-xs sm:text-sm text-[#3E2312]/90 font-light leading-relaxed mb-4 sm:mb-6">
                     {selectedCase.description}
                   </p>
 
-                  <div className="flex items-center space-x-2 text-xs text-[#9C5E33] font-semibold mb-4 sm:mb-6">
+                  <div className="font-montserrat flex items-center space-x-2 text-xs text-[#9C5E33] font-semibold mb-4 sm:mb-6">
                     <Sparkles className="w-4 h-4 text-[#9C5E33]" />
                     <span>Planejamento Digital 3D em Manaus</span>
                   </div>
@@ -205,7 +205,7 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
                       closeImage();
                       onOpenBookingModal();
                     }}
-                    className="w-full min-h-[44px] py-3.5 px-6 rounded-full bg-[#FCE794] hover:bg-[#FAD966] text-[#3E2312] font-bold text-xs uppercase tracking-editorial flex items-center justify-center space-x-2 shadow-md transition-all duration-300"
+                    className="font-montserrat w-full min-h-[44px] py-3.5 px-6 rounded-full bg-[#FCE794] hover:bg-[#FAD966] text-[#3E2312] font-bold text-xs uppercase tracking-editorial flex items-center justify-center space-x-2 shadow-md transition-all duration-300"
                   >
                     <span>AVALIAR MEU CASO</span>
                     <ArrowRight className="w-4 h-4 text-[#3E2312]" />
@@ -215,7 +215,7 @@ export const ExpandableGallery: React.FC<ExpandableGalleryProps> = ({
             </motion.div>
 
             {/* Image Counter Pill */}
-            <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 text-[#3E2312] text-xs font-bold bg-[#FCE794] px-4 py-1.5 sm:px-5 sm:py-2 rounded-full shadow-xl">
+            <div className="font-montserrat absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 text-[#3E2312] text-xs font-bold bg-[#FCE794] px-4 py-1.5 sm:px-5 sm:py-2 rounded-full shadow-xl">
               Caso {selectedIndex + 1} de {cases.length}
             </div>
           </motion.div>

@@ -61,23 +61,23 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-12">
-          <span className="text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-2 sm:mb-3 block">
+          <span className="font-montserrat text-xs uppercase tracking-editorial text-[#FCE794] font-bold mb-2 sm:mb-3 block">
             Galeria Instagram & Casos Clínicos
           </span>
 
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-white leading-tight mb-3 sm:mb-4">
+          <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-3 sm:mb-4">
             Resultados que você consegue{' '}
-            <span className="italic font-normal text-[#FCE794]">ver.</span>
+            <span className="font-playfair italic text-[#FCE794]">ver.</span>
           </h2>
 
-          <p className="font-sans text-sm sm:text-base text-white/90 font-light">
+          <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/90 font-light">
             Cada caso começa com um planejamento rigoroso. Clique na imagem para expandir os detalhes do procedimento.
           </p>
         </div>
 
         {/* Filter Bar */}
         <div className="max-w-2xl mx-auto mb-8 sm:mb-12">
-          <div className="bg-[#FFFFFF] rounded-2xl sm:rounded-full p-2 border border-white/40 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-2">
+          <div className="bg-[#FFFFFF] rounded-2xl sm:rounded-full p-2 border border-white/40 shadow-2xl flex flex-col sm:flex-row items-center justify-between gap-2 font-montserrat">
             <div className="flex items-center pl-3 pr-2 text-[#3E2312] w-full sm:w-auto">
               <Search className="w-4 h-4 text-[#9C5E33] mr-2 shrink-0" />
               <span className="text-xs font-bold uppercase tracking-wider text-[#3E2312]">
@@ -128,9 +128,9 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
           </AnimatePresence>
         </div>
 
-        {/* Bottom CTA Banner with Official Instagram Link */}
+        {/* Bottom CTA Banner */}
         <div className="mt-12 sm:mt-16 text-center">
-          <div className="max-w-xl mx-auto p-4 bg-[#FFFFFF] rounded-2xl sm:rounded-full shadow-2xl border border-white/40 flex flex-col sm:flex-row items-center justify-between text-[#3E2312] gap-3 px-6">
+          <div className="max-w-xl mx-auto p-4 bg-[#FFFFFF] rounded-2xl sm:rounded-full shadow-2xl border border-white/40 flex flex-col sm:flex-row items-center justify-between text-[#3E2312] gap-3 px-6 font-montserrat">
             <a
               href="https://www.instagram.com/drasuellencamposorto/"
               target="_blank"

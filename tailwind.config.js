@@ -8,8 +8,9 @@ export default {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#9C5E33', // Terracota escuro rico
+          DEFAULT: '#9C5E33', // Terracota rico
           hover: '#854D27',
+          dark: '#6E3D1D',
         },
         accent: {
           DEFAULT: '#FCE794', // Amarelo Manteiga
@@ -17,16 +18,22 @@ export default {
         },
         espresso: {
           DEFAULT: '#3E2312', // Café Escuro
-          light: '#5A3821',
+          light: '#59361E',
         },
         cream: {
-          DEFAULT: '#F5F2ED', // Creme / Off-white
-          dark: '#EBE5DC',
+          DEFAULT: '#F5F2ED', // Off-white / Creme
+          dark: '#EBE5DB',
         },
       },
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Montserrat"', 'sans-serif'],
+        // Fonte principal para títulos e destaques editoriais (Playfair Display + fallbacks)
+        playfair: ['"Playfair Display"', '"Bodoni Moda"', '"Cormorant Garamond"', 'serif'],
+        // Fonte secundária para corpo e textos funcionais (Montserrat + fallbacks)
+        montserrat: ['Montserrat', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+      },
+      letterSpacing: {
+        editorial: '0.15em',
+        widest: '0.25em',
       },
     },
   },

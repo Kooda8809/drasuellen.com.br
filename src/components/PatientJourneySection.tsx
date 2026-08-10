@@ -35,13 +35,13 @@ export const PatientJourneySection: React.FC = () => {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-20">
-          <span className="text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
+          <span className="font-montserrat text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
             Jornada do Paciente
           </span>
 
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight">
+          <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-espresso leading-tight">
             Do primeiro contato ao seu{' '}
-            <span className="italic font-normal text-primary">novo sorriso.</span>
+            <span className="font-playfair italic text-primary">novo sorriso.</span>
           </h2>
         </div>
 
@@ -62,25 +62,25 @@ export const PatientJourneySection: React.FC = () => {
             >
               <div>
                 <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cream border border-espresso/10 flex items-center justify-center font-serif text-base sm:text-lg font-bold text-primary shadow-inner shrink-0">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-cream border border-espresso/10 flex items-center justify-center font-playfair text-base sm:text-lg font-bold text-primary shadow-inner shrink-0">
                     {step.number}
                   </div>
                   <div>
-                    <h3 className="font-sans text-xs uppercase tracking-editorial font-bold text-espresso">
+                    <h3 className="font-montserrat text-xs uppercase tracking-editorial font-bold text-espresso">
                       {step.title}
                     </h3>
-                    <span className="font-serif italic text-xs text-primary font-normal block">
+                    <span className="font-playfair italic text-xs text-primary font-normal block">
                       {step.subtitle}
                     </span>
                   </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
+                <p className="font-montserrat text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
                   {step.description}
                 </p>
               </div>
 
-              <div className="mt-6 pt-3 border-t border-espresso/10 text-[10px] uppercase tracking-widest text-espresso/60 font-semibold">
+              <div className="font-montserrat mt-6 pt-3 border-t border-espresso/10 text-[10px] uppercase tracking-widest text-espresso/60 font-semibold">
                 Etapa 0{idx + 1} de 04
               </div>
             </motion.div>

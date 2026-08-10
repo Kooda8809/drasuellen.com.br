@@ -13,13 +13,12 @@ export const WhatsAppFloatingCTA: React.FC = () => {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      // 1. Hide while in Hero section (first ~60% of viewport height)
+      // 1. Hide while in Hero section
       const pastHero = scrollY > windowHeight * 0.6;
 
-      // 2. Hide when approaching Footer section (within ~380px of bottom of document)
+      // 2. Hide when approaching Footer section
       const nearFooter = scrollY + windowHeight >= documentHeight - 380;
 
-      // Only show when past Hero AND before Footer
       if (pastHero && !nearFooter) {
         setIsVisible(true);
       } else {
@@ -28,7 +27,7 @@ export const WhatsAppFloatingCTA: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial check
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -40,7 +39,7 @@ export const WhatsAppFloatingCTA: React.FC = () => {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-          className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end pointer-events-auto"
+          className="fixed bottom-5 right-4 sm:bottom-6 sm:right-6 z-40 flex flex-col items-end pointer-events-auto font-montserrat"
         >
           {/* Tooltip Badge */}
           <AnimatePresence>
@@ -58,10 +57,10 @@ export const WhatsAppFloatingCTA: React.FC = () => {
                 >
                   <X className="w-3.5 h-3.5" />
                 </button>
-                <span className="text-[10px] uppercase tracking-editorial text-primary font-bold block mb-0.5">
+                <span className="font-montserrat text-[10px] uppercase tracking-editorial text-primary font-bold block mb-0.5">
                   Atendimento Online
                 </span>
-                <p className="text-xs text-espresso/85 font-medium leading-snug pr-3">
+                <p className="font-montserrat text-xs text-espresso/85 font-medium leading-snug pr-3">
                   Olá! Precisa tirar dúvidas sobre tratamentos com a equipe da Dra. Suellen?
                 </p>
               </motion.div>

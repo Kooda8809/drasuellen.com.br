@@ -45,12 +45,17 @@
     }
     </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&display=swap" rel="stylesheet">
+    <!-- Pré-conexão para carregamento assíncrono das fontes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!-- Importação oficial das fontes Playfair Display (variável + itálicos) e Montserrat -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body class="bg-offwhite text-marrom-deep font-sans antialiased selection:bg-terracota/20 selection:text-marrom-deep">
+  <body class="bg-cream text-espresso font-montserrat antialiased selection:bg-[#9C5E33]/20 selection:text-[#3E2312]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

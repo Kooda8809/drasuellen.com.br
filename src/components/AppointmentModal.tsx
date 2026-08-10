@@ -24,7 +24,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
 
     setSubmitted(true);
     setTimeout(() => {
-      const phone = import.meta.env.VITE_WHATSAPP_NUMBER || '5592999999999';
+      const phone = import.meta.env.VITE_WHATSAPP_NUMBER || '559294235393';
       const text = encodeURIComponent(
         `Olá, Dra. Suellen! Gostaria de agendar uma avaliação.\n\n` +
         `*Nome:* ${formData.name}\n` +
@@ -46,7 +46,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 overflow-y-auto font-montserrat">
           {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
@@ -75,17 +75,17 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
 
             {!submitted ? (
               <div>
-                <span className="text-xs uppercase tracking-editorial text-primary font-bold block mb-1">
+                <span className="font-montserrat text-xs uppercase tracking-editorial text-primary font-bold block mb-1">
                   Atendimento Exclusivo
                 </span>
-                <h3 className="font-serif text-xl sm:text-3xl font-normal text-espresso mb-2">
-                  Agendar sua <span className="italic font-normal text-primary">avaliação</span>
+                <h3 className="font-playfair text-xl sm:text-3xl font-bold text-espresso mb-2">
+                  Agendar sua <span className="font-playfair italic text-primary">avaliação</span>
                 </h3>
-                <p className="text-xs sm:text-sm text-espresso/80 mb-5 font-light leading-relaxed">
+                <p className="font-montserrat text-xs sm:text-sm text-espresso/80 mb-5 font-light leading-relaxed">
                   Preencha os dados abaixo para darmos início ao planejamento personalizado do seu novo sorriso em Manaus.
                 </p>
 
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form onSubmit={handleSubmit} className="space-y-4 font-montserrat">
                   <div>
                     <label className="block text-xs uppercase tracking-wide text-espresso font-bold mb-1">
                       Seu Nome Completo *
@@ -161,7 +161,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                     />
                   </div>
 
-                  {/* LGPD Consent Checkbox with Large Touch Area */}
+                  {/* LGPD Consent Checkbox */}
                   <div className="mt-3 flex items-start gap-3">
                     <input
                       type="checkbox"
@@ -180,7 +180,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                     <button
                       type="submit"
                       disabled={!acceptedTerms}
-                      className={`w-full min-h-[44px] py-4 bg-accent hover:bg-accent-hover text-espresso font-bold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center space-x-2 ${
+                      className={`w-full min-h-[44px] py-4 bg-accent hover:bg-accent-hover text-espresso font-montserrat font-bold text-xs uppercase tracking-editorial rounded-full shadow-md transition-all duration-300 flex items-center justify-center space-x-2 ${
                         !acceptedTerms ? 'opacity-50 cursor-not-allowed' : 'hover:scale-[1.02] hover:shadow-lg'
                       }`}
                     >
@@ -196,7 +196,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                 </form>
               </div>
             ) : (
-              <div className="text-center py-8">
+              <div className="text-center py-8 font-montserrat">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
@@ -204,8 +204,8 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
                 >
                   <CheckCircle2 className="w-10 h-10" />
                 </motion.div>
-                <h4 className="font-serif text-xl sm:text-2xl text-espresso mb-2">
-                  Solicitação registrada com <span className="italic font-normal text-primary">sucesso</span>
+                <h4 className="font-playfair text-xl sm:text-2xl text-espresso mb-2">
+                  Solicitação registrada com <span className="font-playfair italic text-primary">sucesso</span>
                 </h4>
                 <p className="text-xs sm:text-sm text-espresso/80 mb-6">
                   Redirecionando você para o WhatsApp da equipe da Dra. Suellen Campos...

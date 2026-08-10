@@ -58,12 +58,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
         
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <span className="text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
+          <span className="font-montserrat text-xs uppercase tracking-editorial text-primary font-bold mb-2 sm:mb-3 block">
             Esclarecimentos Clínicos
           </span>
 
-          <h2 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-normal text-espresso leading-tight">
-            Perguntas <span className="italic font-normal text-primary">frequentes.</span>
+          <h2 className="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold text-espresso leading-tight">
+            Perguntas <span className="font-playfair italic text-primary">frequentes.</span>
           </h2>
         </div>
 
@@ -84,7 +84,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="w-full min-h-[44px] p-4 sm:p-6 text-left flex items-center justify-between space-x-4 focus:outline-none"
                 >
-                  <span className="font-serif text-sm sm:text-lg text-espresso font-medium leading-snug">
+                  <span className="font-playfair text-sm sm:text-lg text-espresso font-semibold leading-snug">
                     {faq.question}
                   </span>
                   <div className={`p-1.5 rounded-full transition-transform duration-300 shrink-0 ${isOpen ? 'bg-primary text-white rotate-180' : 'bg-cream text-espresso'}`}>
@@ -101,7 +101,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
                       transition={{ duration: 0.3 }}
                       className="border-t border-espresso/10"
                     >
-                      <div className="p-4 sm:p-6 pt-3 text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
+                      <div className="font-montserrat p-4 sm:p-6 pt-3 text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -114,12 +114,12 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
 
         {/* FAQ CTA */}
         <div className="mt-10 sm:mt-12 text-center">
-          <p className="text-xs text-espresso/70 mb-3">
+          <p className="font-montserrat text-xs text-espresso/70 mb-3">
             Possui outra dúvida específica sobre o seu caso?
           </p>
           <button
             onClick={onOpenModal}
-            className="min-h-[44px] text-xs uppercase tracking-editorial font-bold text-primary hover:text-espresso underline underline-offset-4 inline-flex items-center justify-center"
+            className="font-montserrat min-h-[44px] text-xs uppercase tracking-editorial font-bold text-primary hover:text-espresso underline underline-offset-4 inline-flex items-center justify-center"
           >
             FALAR DIRETAMENTE COM A EQUIPE
           </button>
