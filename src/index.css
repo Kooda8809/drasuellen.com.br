@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: 'Montserrat', sans-serif;
+    color: #3E2312;
+    background-color: #F5F2ED;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F2ED;
+}
+::-webkit-scrollbar-thumb {
+  background: #9C5E33;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3E2312;
+}
+
+/* Instagram Search Bar Style Pill */
+.ig-search-pill {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(62, 35, 18, 0.12);
+  border-radius: 9999px;
+  box-shadow: 0 4px 20px -2px rgba(62, 35, 18, 0.08);
+}
+
+.text-gold-accent {
+  color: #FCE794;
+}
