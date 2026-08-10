@@ -42,7 +42,7 @@ export const TestimonialsSection: React.FC = () => {
             <span className="font-playfair italic text-[#FCE794]">sorriso.</span>
           </h2>
 
-          <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/90 font-light">
+          <p className="font-montserrat text-sm sm:text-base md:text-lg text-white/90 font-normal">
             Depoimentos reais extraídos de avaliações verificadas de pacientes atendidos em Manaus/AM.
           </p>
         </div>
@@ -69,23 +69,24 @@ export const TestimonialsSection: React.FC = () => {
                   <Quote className="w-6 h-6 text-[#9C5E33]/30" />
                 </div>
 
-                <p className="font-montserrat text-xs sm:text-sm text-[#3E2312] font-normal leading-relaxed mb-6 italic">
+                {/* High Legibility Upright Quote Text */}
+                <p className="font-montserrat text-sm sm:text-base text-[#3E2312] font-normal leading-relaxed mb-6">
                   "{t.quote}"
                 </p>
               </div>
 
               <div className="pt-4 border-t border-[#3E2312]/10 flex items-center justify-between">
                 <div>
-                  <h4 className="font-playfair font-bold text-sm text-[#3E2312]">
+                  <h4 className="font-playfair font-bold text-base text-[#3E2312]">
                     {t.author}
                   </h4>
-                  <span className="font-montserrat text-[11px] text-[#9C5E33] font-medium block">
+                  <span className="font-montserrat text-xs text-[#9C5E33] font-semibold block mt-0.5">
                     {t.role}
                   </span>
                 </div>
 
-                <div className="font-montserrat flex items-center space-x-1 px-2.5 py-1 bg-white rounded-full text-[9px] uppercase font-bold text-[#9C5E33] shadow-sm">
-                  <CheckCircle2 className="w-3 h-3 text-[#9C5E33]" />
+                <div className="font-montserrat flex items-center space-x-1 px-3 py-1 bg-white rounded-full text-[10px] uppercase font-bold text-[#9C5E33] shadow-sm">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#9C5E33]" />
                   <span>Verificado</span>
                 </div>
               </div>

@@ -12,7 +12,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Left Column - Photography (Using dra3.avif from Anexo 1) */}
+          {/* Left Column - Photography (dra3.avif) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -44,7 +44,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
             </div>
           </motion.div>
 
-          {/* Right Column - Text & Authority */}
+          {/* Right Column - Text & Authority (High Readability Typography) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -61,11 +61,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
               <span className="font-playfair italic text-primary">história.</span>
             </h2>
 
-            <p className="font-montserrat text-base md:text-lg text-espresso/90 font-light leading-relaxed mb-4 sm:mb-6 text-left">
+            <p className="font-montserrat text-base md:text-lg text-espresso font-normal leading-relaxed mb-4 sm:mb-6 text-left">
               Especialista em Odontologia Estética e Reabilitação Oral em Manaus/AM, a Dra. Suellen Campos combina rigor científico, tecnologia de escaneamento digital e sensibilidade artística para desenhar sorrisos elegantes e naturalmente integrados à face.
             </p>
 
-            <p className="font-montserrat text-base md:text-lg text-espresso/85 font-light leading-relaxed mb-6 sm:mb-8 text-left">
+            <p className="font-montserrat text-base md:text-lg text-espresso/90 font-normal leading-relaxed mb-6 sm:mb-8 text-left">
               Sua filosofia de trabalho baseia-se na escuta ativa e no respeito absoluto à anatomia original de cada paciente. Longe das soluções padronizadas, cada intervenção é milimetricamente planejada para entregar previsibilidade, conforto e durabilidade.
             </p>
 
@@ -79,7 +79,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
                   <h4 className="font-playfair text-base text-espresso font-semibold mb-1">
                     Excelência Técnica
                   </h4>
-                  <p className="font-montserrat text-xs text-espresso/80 leading-normal font-light">
+                  <p className="font-montserrat text-xs sm:text-sm text-espresso/85 leading-normal font-normal">
                     Formação contínua nas técnicas estéticas e reabilitadoras mais avançadas.
                   </p>
                 </div>
@@ -93,7 +93,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
                   <h4 className="font-playfair text-base text-espresso font-semibold mb-1">
                     Planejamento Digital 3D
                   </h4>
-                  <p className="font-montserrat text-xs text-espresso/80 leading-normal font-light">
+                  <p className="font-montserrat text-xs sm:text-sm text-espresso/85 leading-normal font-normal">
                     Simulações e mockups que permitem visualizar seu resultado antes de iniciar.
                   </p>
                 </div>

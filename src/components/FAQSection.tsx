@@ -67,7 +67,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
           </h2>
         </div>
 
-        {/* Accordion List */}
+        {/* Accordion List (Crisp Upright High Readability Typography) */}
         <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIndex === idx;
@@ -84,7 +84,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
                   onClick={() => setOpenIndex(isOpen ? null : idx)}
                   className="w-full min-h-[44px] p-4 sm:p-6 text-left flex items-center justify-between space-x-4 focus:outline-none"
                 >
-                  <span className="font-playfair text-sm sm:text-lg text-espresso font-semibold leading-snug">
+                  <span className="font-playfair text-base sm:text-lg text-espresso font-semibold leading-snug">
                     {faq.question}
                   </span>
                   <div className={`p-1.5 rounded-full transition-transform duration-300 shrink-0 ${isOpen ? 'bg-primary text-white rotate-180' : 'bg-cream text-espresso'}`}>
@@ -101,7 +101,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
                       transition={{ duration: 0.3 }}
                       className="border-t border-espresso/10"
                     >
-                      <div className="font-montserrat p-4 sm:p-6 pt-3 text-xs sm:text-sm text-espresso/85 font-light leading-relaxed">
+                      <div className="font-montserrat p-4 sm:p-6 pt-3 text-sm sm:text-base text-espresso font-normal leading-relaxed">
                         {faq.answer}
                       </div>
                     </motion.div>
@@ -114,7 +114,7 @@ export const FAQSection: React.FC<FAQSectionProps> = ({ onOpenModal }) => {
 
         {/* FAQ CTA */}
         <div className="mt-10 sm:mt-12 text-center">
-          <p className="font-montserrat text-xs text-espresso/70 mb-3">
+          <p className="font-montserrat text-sm text-espresso/80 mb-3 font-normal">
             Possui outra dúvida específica sobre o seu caso?
           </p>
           <button

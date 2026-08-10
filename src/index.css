@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  /* Define a fonte padrão do corpo como Montserrat */
+  /* Define a fonte padrão do corpo como Plus Jakarta Sans / Inter com alta legibilidade */
   body {
-    font-family: 'Montserrat', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Plus Jakarta Sans', 'Inter', 'Montserrat', system-ui, -apple-system, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #F5F2ED;

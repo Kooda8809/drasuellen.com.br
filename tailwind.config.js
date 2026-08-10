@@ -28,12 +28,13 @@ export default {
       fontFamily: {
         // Fonte principal para títulos e destaques editoriais (Playfair Display + fallbacks)
         playfair: ['"Playfair Display"', '"Bodoni Moda"', '"Cormorant Garamond"', 'serif'],
-        // Fonte secundária para corpo e textos funcionais (Montserrat + fallbacks)
-        montserrat: ['Montserrat', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        // Fonte secundária para corpo e textos funcionais (Plus Jakarta Sans + Inter + Montserrat)
+        montserrat: ['"Plus Jakarta Sans"', 'Inter', 'Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'Inter', 'Montserrat', 'system-ui', '-apple-system', 'sans-serif'],
       },
       letterSpacing: {
-        editorial: '0.15em',
-        widest: '0.25em',
+        editorial: '0.12em',
+        widest: '0.2em',
       },
     },
   },

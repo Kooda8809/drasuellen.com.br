@@ -81,7 +81,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
             Tratamentos executados sob{' '}
             <span className="font-playfair italic text-primary">medida.</span>
           </h2>
-          <p className="font-montserrat text-sm sm:text-base md:text-lg text-espresso/80 font-light leading-relaxed">
+          <p className="font-montserrat text-sm sm:text-base md:text-lg text-espresso/90 font-normal leading-relaxed">
             Soluções personalizadas que unem alta tecnologia digital, odontologia conservadora e refinamento estético em Manaus.
           </p>
         </div>
@@ -119,13 +119,13 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                 </div>
 
                 <div className="p-4 sm:p-5">
-                  <p className="font-montserrat text-xs sm:text-sm text-espresso/85 font-light leading-relaxed mb-4 line-clamp-3">
+                  <p className="font-montserrat text-xs sm:text-sm text-espresso font-normal leading-relaxed mb-4 line-clamp-3">
                     {t.description}
                   </p>
 
                   <div className="space-y-1.5 mb-4">
                     {t.highlights.slice(0, 2).map((item, idx) => (
-                      <div key={idx} className="flex items-center space-x-2 font-montserrat text-[11px] text-espresso/90">
+                      <div key={idx} className="flex items-center space-x-2 font-montserrat text-xs text-espresso font-normal">
                         <Check className="w-3.5 h-3.5 text-primary shrink-0" />
                         <span className="truncate">{item}</span>
                       </div>
@@ -189,16 +189,16 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                   <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-espresso mb-3">
                     {t.title}
                   </h3>
-                  <p className="font-montserrat text-sm text-espresso/90 font-light leading-relaxed mb-6">
+                  <p className="font-montserrat text-sm sm:text-base text-espresso font-normal leading-relaxed mb-6">
                     {t.description}
                   </p>
 
                   <div className="bg-white p-4 rounded-xl border border-espresso/10 mb-6">
-                    <h4 className="font-playfair text-sm text-espresso font-bold mb-3 flex items-center space-x-2">
+                    <h4 className="font-playfair text-sm sm:text-base text-espresso font-bold mb-3 flex items-center space-x-2">
                       <ShieldCheck className="w-4 h-4 text-primary" />
                       <span>Diferenciais deste tratamento</span>
                     </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-montserrat text-xs text-espresso/80">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 font-montserrat text-xs sm:text-sm text-espresso font-normal">
                       {t.highlights.map((h, i) => (
                         <div key={i} className="flex items-center space-x-2">
                           <Sparkles className="w-3.5 h-3.5 text-primary shrink-0" />
@@ -209,7 +209,7 @@ export const TreatmentsSection: React.FC<TreatmentsSectionProps> = ({ onOpenModa
                   </div>
 
                   <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-espresso/10">
-                    <p className="font-montserrat text-xs text-espresso/70 italic">
+                    <p className="font-montserrat text-xs sm:text-sm text-espresso/80 font-normal">
                       {t.indication}
                     </p>
                     <button
