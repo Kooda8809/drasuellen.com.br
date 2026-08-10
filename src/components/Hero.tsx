@@ -10,7 +10,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
   return (
     <section className="relative min-h-[100dvh] flex items-end md:items-center bg-[#2D1612] text-white overflow-hidden">
       
-      {/* FULL-BACKGROUND HERO IMAGE - MOBILE FOCUS AT OBJECT 82% 15% TO PROPERLY CENTER DRA SUELLEN */}
+      {/* FULL-BACKGROUND HERO IMAGE */}
       <div className="absolute inset-0 z-0">
         <picture>
           <source srcSet="/images/hero_new.avif" type="image/avif" />
@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:col-span-7 flex flex-col items-start"
+            className="lg:col-span-8 flex flex-col items-start"
           >
             {/* Top Brand Tag */}
             <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/20 text-[11px] uppercase tracking-[0.18em] text-[#FCE794] font-montserrat font-semibold mb-4 sm:mb-6 backdrop-blur-md shadow-md">
@@ -84,38 +84,6 @@ export const Hero: React.FC<HeroProps> = ({ onOpenModal }) => {
                 <CheckCircle2 className="w-4 h-4 text-[#FCE794]" />
                 <span>Facetas & Implantes</span>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Right Column - Desktop Badges */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
-            className="hidden lg:flex lg:col-span-5 relative flex-col justify-end items-end h-full pt-16"
-          >
-            {/* Floating Pin Badge */}
-            <div className="bg-white/95 backdrop-blur-md px-6 py-4 rounded-2xl border border-white/50 shadow-2xl text-[#3E2312] max-w-xs mb-4">
-              <div className="flex items-center space-x-2 text-[10px] uppercase font-bold tracking-widest text-[#9C5E33] font-montserrat mb-1">
-                <span className="w-2 h-2 rounded-full bg-[#9C5E33] animate-ping" />
-                <span>Atendimento Presencial</span>
-              </div>
-              <h4 className="font-playfair font-bold text-sm tracking-wider text-[#3E2312]">
-                Dra. Suellen Campos
-              </h4>
-              <p className="font-montserrat text-[10px] uppercase tracking-widest text-[#9C5E33] font-semibold mt-0.5">
-                ODONTOLOGIA ESTÉTICA \ CRO AM
-              </p>
-            </div>
-
-            {/* Floating Stamp Seal Accent */}
-            <div className="bg-[#3E2312]/85 border border-[#FCE794]/40 backdrop-blur-md px-5 py-3 rounded-xl text-right shadow-xl">
-              <span className="font-playfair italic text-xs text-[#FCE794] block">
-                Exclusividade & Naturalidade
-              </span>
-              <span className="font-montserrat text-[9px] uppercase tracking-editorial text-white/80 font-light block">
-                Manaus • Amazonas
-              </span>
             </div>
           </motion.div>
 

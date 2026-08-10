@@ -12,7 +12,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Left Column - Photography */}
+          {/* Left Column - Photography (Using dra3.avif from Anexo 1) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -23,11 +23,11 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-xl aspect-[4/5] bg-cream-dark border-4 border-white">
                 <picture>
-                  <source srcSet="/images/about.avif" type="image/avif" />
+                  <source srcSet="/images/dra3.avif" type="image/avif" />
                   <img
-                    src="/images/about.avif"
+                    src="/images/dra3.avif"
                     alt="Dra. Suellen Campos em seu consultório em Manaus"
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-[center_15%]"
                   />
                 </picture>
               </div>
@@ -62,7 +62,7 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onOpenModal }) => {
             </h2>
 
             <p className="font-montserrat text-base md:text-lg text-espresso/90 font-light leading-relaxed mb-4 sm:mb-6 text-left">
-              Especialista em Odontologia Estética e Reabilitação Oral em Manaus/AM, a Dra. Suellen Campos combina rigor científico, tecnologia de escaneamento digital e sensibilidade artística para desenhar sorrisos elegantes e naturally integrados à face.
+              Especialista em Odontologia Estética e Reabilitação Oral em Manaus/AM, a Dra. Suellen Campos combina rigor científico, tecnologia de escaneamento digital e sensibilidade artística para desenhar sorrisos elegantes e naturalmente integrados à face.
             </p>
 
             <p className="font-montserrat text-base md:text-lg text-espresso/85 font-light leading-relaxed mb-6 sm:mb-8 text-left">
