@@ -38,21 +38,27 @@ export const Header: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between">
           
-          {/* Left Side: Brand Logo (Playfair Display) */}
-          <div className="flex justify-start">
-            <a href="#" className="group flex flex-col">
-              <span className={`font-playfair tracking-widest text-sm sm:text-base font-bold text-white whitespace-nowrap transition-opacity duration-300 ${
-                isScrolled ? 'opacity-100' : 'opacity-95'
-              }`}>
-                DRA. SUELLEN CAMPOS
-              </span>
-              <span className="font-montserrat text-[9px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
-                Odontologia Estética
-              </span>
-            </a>
+          {/* Left Side: Brand Logo (INVISIBLE ON HERO, FADES IN ONLY AFTER SCROLLING > 60PX) */}
+          <div className="w-1/4 sm:w-1/3 flex justify-start">
+            <div
+              className={`transition-all duration-500 ${
+                isScrolled
+                  ? 'opacity-100 translate-y-0 pointer-events-auto'
+                  : 'opacity-0 -translate-y-2 pointer-events-none'
+              }`}
+            >
+              <a href="#" className="group flex flex-col">
+                <span className="font-playfair tracking-widest text-sm sm:text-base font-bold text-white whitespace-nowrap">
+                  DRA. SUELLEN CAMPOS
+                </span>
+                <span className="font-montserrat text-[9px] tracking-[0.2em] uppercase text-[#FCE794] font-semibold">
+                  Odontologia Estética
+                </span>
+              </a>
+            </div>
           </div>
 
-          {/* Center: Desktop Navigation Links (Montserrat) */}
+          {/* Center: Desktop Navigation Links (Montserrat, PERFECTLY CENTERED) */}
           <nav className="hidden lg:flex items-center justify-center space-x-8 flex-1">
             {navLinks.map((link) => (
               <a
@@ -66,10 +72,10 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Right Side: Mobile Hamburger Button */}
-          <div className="lg:hidden flex items-center">
+          <div className="w-1/4 sm:w-1/3 flex justify-end">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2.5 min-h-[44px] min-w-[44px] text-white hover:text-[#FCE794] focus:outline-none flex items-center justify-center bg-white/10 rounded-full border border-white/20"
+              className="lg:hidden p-2.5 min-h-[44px] min-w-[44px] text-white hover:text-[#FCE794] focus:outline-none flex items-center justify-center bg-white/10 rounded-full border border-white/20"
               aria-label="Abrir menu de navegação"
             >
               <Menu className="w-6 h-6" />
