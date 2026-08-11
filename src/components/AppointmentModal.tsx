@@ -24,7 +24,7 @@ export const AppointmentModal: React.FC<AppointmentModalProps> = ({ isOpen, onCl
 
     setSubmitted(true);
     setTimeout(() => {
-      const phone = import.meta.env.VITE_WHATSAPP_NUMBER || '559294235393';
+      const phone = import.meta.env.VITE_WHATSAPP_NUMBER || '5599999999999';
       const text = encodeURIComponent(
         `Olá, Dra. Suellen! Gostaria de agendar uma avaliação.\n\n` +
         `*Nome:* ${formData.name}\n` +

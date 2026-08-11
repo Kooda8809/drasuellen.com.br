@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 export const WhatsAppFloatingCTA: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '559294235393';
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '5599999999999';
 
   useEffect(() => {
     const handleScroll = () => {

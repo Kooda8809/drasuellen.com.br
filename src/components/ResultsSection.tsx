@@ -152,14 +152,14 @@ export const ResultsSection: React.FC<ResultsSectionProps> = ({ onOpenModal }) =
         <div className="mt-12 sm:mt-16 text-center">
           <div className="max-w-xl mx-auto p-4 bg-[#FFFFFF] rounded-2xl sm:rounded-full shadow-2xl border border-white/40 flex flex-col sm:flex-row items-center justify-between text-[#3E2312] gap-3 px-6 font-montserrat">
             <a
-              href="https://www.instagram.com/drasuellencamposorto/"
+              href="https://www.instagram.com/ficticio/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 text-left hover:text-[#9C5E33] transition-colors"
             >
               <Instagram className="w-5 h-5 text-[#9C5E33] shrink-0" />
               <span className="text-xs font-bold text-[#3E2312]">
-                Siga @drasuellencamposorto no Instagram
+                Siga @ficticio no Instagram
               </span>
             </a>
             <button

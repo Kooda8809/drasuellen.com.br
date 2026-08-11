@@ -7,7 +7,7 @@ interface FinalCTASectionProps {
 }
 
 export const FinalCTASection: React.FC<FinalCTASectionProps> = ({ onOpenModal }) => {
-  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '559294235393';
+  const whatsappNumber = import.meta.env.VITE_WHATSAPP_NUMBER || '5599999999999';
 
   return (
     <section className="py-16 sm:py-24 lg:py-36 bg-[#9C5E33] text-white relative overflow-hidden">
